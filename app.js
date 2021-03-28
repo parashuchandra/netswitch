@@ -66,14 +66,13 @@ app.use(function (err, req, res, next) {
   });
 });
 
-if (config.env_name === 'dev') {
-  app.use(express.static(__dirname + '/dist', { fallthrough: true }));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve('dist/index.html'));
-  });
-}
+app.use(express.static(__dirname + '/dist', { fallthrough: true }));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('dist/index.html'));
+});
 
+const port = process.env.PORT || 3000;
 // finally, let's start our server...
-var server = app.listen(process.env.PORT || 5000, function () {
-  console.log('Listening on port ' + server.address().port);
+const server = app.listen(port, function () {
+  logger.info('Listening on port ' + server.address().port);
 });

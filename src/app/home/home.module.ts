@@ -9,10 +9,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MnpComponent } from './mnp/mnp.component';
 import { SelectNetworkComponent } from './select-network/select-network.component';
-import { CustomCurrencyPipe } from './custom-currency.pipe';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, MaterialModule, TranslateModule, SharedModule, HomeRoutingModule],
-  declarations: [HomeComponent, SelectNetworkComponent, MnpComponent, CompleteSwitchComponent, CustomCurrencyPipe],
+  declarations: [HomeComponent, SelectNetworkComponent, MnpComponent, CompleteSwitchComponent],
 })
 export class HomeModule {}

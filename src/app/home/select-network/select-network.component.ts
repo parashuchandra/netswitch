@@ -1,13 +1,12 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { CustomCurrencyPipe } from '../custom-currency.pipe';
 
 @Component({
   selector: 'app-select-network',
   templateUrl: './select-network.component.html',
   styleUrls: ['./select-network.component.scss'],
 })
-export class SelectNetworkComponent implements OnInit, OnChanges {
+export class SelectNetworkComponent implements OnInit {
   error: string | undefined;
   networkForm!: FormGroup;
   firstFormGroup!: FormGroup;
@@ -16,11 +15,7 @@ export class SelectNetworkComponent implements OnInit, OnChanges {
   networks: Network[];
   serviceTypes: ServiceType[];
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private ctrlContainer: FormGroupDirective,
-    private customCurrencyPipe: CustomCurrencyPipe
-  ) {
+  constructor(private formBuilder: FormBuilder, private ctrlContainer: FormGroupDirective) {
     this.networks = [
       {
         name: 'jio',
@@ -39,10 +34,6 @@ export class SelectNetworkComponent implements OnInit, OnChanges {
         serviceTypes: [ServiceType.prepaid],
       },
     ];
-    const newCurrency = this.customCurrencyPipe.transform(222.0, 'eu');
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
   }
 
   ngOnInit() {
