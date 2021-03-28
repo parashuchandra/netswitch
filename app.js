@@ -66,14 +66,14 @@ app.use(function (err, req, res, next) {
   });
 });
 
-if (config.env_name !== 'dev') {
+if (config.env_name === 'dev') {
   app.use(express.static(__dirname + '/dist', { fallthrough: true }));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve('dist/netswitch/index.html'));
+    res.sendFile(path.resolve('dist/index.html'));
   });
 }
 
 // finally, let's start our server...
-var server = app.listen(process.env.PORT || 3000, function () {
+var server = app.listen(process.env.PORT || 5000, function () {
   console.log('Listening on port ' + server.address().port);
 });

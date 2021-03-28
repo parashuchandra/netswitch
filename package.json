@@ -2,10 +2,14 @@
   "name": "network-switch",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "ng": "ng",
     "build": "npm run write:env -s && ng build --prod",
-    "start": "npm run write:env -s && ng serve --proxy-config proxy.conf.js",
+    "start-ui": "npm run write:env -s && ng serve --proxy-config proxy.conf.js",
+    "start": "npm run build & node app.js",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
     "test": "npm run write:env -s && ng test",
     "test:ci": "npm run write:env -s && npm run lint -s && ng test --configuration=ci",
@@ -25,6 +29,8 @@
   "dependencies": {
     "@angular/animations": "^11.0.8",
     "@angular/cdk": "^11.2.5",
+    "@angular/cli": "~11.0.6",
+    "@angular/compiler-cli": "^11.0.8",
     "@angular/common": "^11.0.8",
     "@angular/compiler": "^11.0.8",
     "@angular/core": "^11.0.8",
@@ -72,8 +78,6 @@
   },
   "devDependencies": {
     "cordova": "^10.0.0",
-    "@angular/cli": "~11.0.6",
-    "@angular/compiler-cli": "^11.0.8",
     "@angular/language-service": "^11.0.8",
     "@angular-devkit/build-angular": "^0.1100.6",
     "@biesbjerg/ngx-translate-extract": "^7.0.3",

@@ -1,7 +1,7 @@
 'use strict';
 
 exports.extend = function (env) {
-  env.port = '3000';
+  env.port = '5000';
   env.mysql_config = {
     connectionLimit: 5,
     host: 'localhost',
@@ -10,5 +10,4 @@ exports.extend = function (env) {
     password: 'root',
     database: 'auth_DEV',
   };
-
 };
