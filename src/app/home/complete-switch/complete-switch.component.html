@@ -1,0 +1,15 @@
+<div class="card col-md-10 mt-3 mx-auto">
+  <div class="card-body">
+    <h4 class="card-title text-center">Complete the process by entering otp sent to your mobile</h4>
+
+    <form [formGroup]="completeForm">
+      <mat-form-field class="d-block">
+        <mat-label>OTP Number</mat-label>
+        <input matInput type="search" formControlName="otpno" placeholder="OTP Number" />
+        <button mat-button matSuffix mat-flat-button color="primary" aria-label="generate otp" (click)="logit()">
+          Generate OTP
+        </button>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

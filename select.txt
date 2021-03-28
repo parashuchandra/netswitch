@@ -1,0 +1,1 @@
+select * from emloyees where employee_id not in( select employee_id from emplyees order by salary where employee_id not in(select 1 from emplyees order by salary))

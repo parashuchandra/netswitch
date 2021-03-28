@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "C:\\Users\\ram\\Pictures\\netswitch\\logs\\.7765b1c786849d372b89d18c4a3051d07a605d1d-audit.json",
+    "files": [
+        {
+            "date": 1616336105144,
+            "name": "C:\\Users\\ram\\Pictures\\netswitch\\logs\\netswitch-2021-03-21.log",
+            "hash": "b1a0338dc36ad4cc57674fa67824bc57"
+        }
+    ]
+}

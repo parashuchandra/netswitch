@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="card mt-3 mx-auto">
+    <h4 class="card-title text-center mt-3 font-weight-bold">You are currently using Airtel prepaid service.</h4>
+    <mat-horizontal-stepper linear="true" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel class="text-wrap">Select the network you want to switch to</ng-template>
+
+        <form [formGroup]="firstFormGroup">
+          <app-select-network></app-select-network>
+          <div class="mt-3 float-right">
+            <button mat-stroked-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Enter MNP number">
+        <form [formGroup]="secondFormGroup">
+          <app-mnp></app-mnp>
+          <div class="mt-3 float-right">
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step label="Re-enter OTP to complete">
+        <form [formGroup]="thirdFormGroup">
+          <app-complete-switch></app-complete-switch>
+          <div class="mt-3 float-right">
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-stroked-button color="primary" (click)="stepper.reset()">Submit</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>

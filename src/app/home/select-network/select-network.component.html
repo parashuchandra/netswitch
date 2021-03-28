@@ -1,0 +1,31 @@
+<div class="card col-md-6 mt-3 mx-auto">
+  <div class="card-body">
+    <h4 class="card-title text-center">Select the Service provider you want to switch to</h4>
+
+    <form [formGroup]="networkForm">
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>Select new Service Provider</mat-label>
+        <mat-select formControlName="new_service" (selectionChange)="showServiceTypes($event.value)" required>
+          <mat-option *ngFor="let network of networks" [value]="network.name">
+            {{ network.name | translate }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="networkForm.controls.new_service.hasError('required')"
+          >Please select one of the Service Provider</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>Select service type</mat-label>
+        <mat-select formControlName="new_service_type" required>
+          <mat-option *ngFor="let type of serviceTypes" [value]="type">
+            {{ type }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="networkForm.controls.new_service_type.hasError('required')"
+          >Please select one of the service type</mat-error
+        >
+      </mat-form-field>
+    </form>
+  </div>
+</div>
